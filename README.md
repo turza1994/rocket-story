@@ -5,18 +5,11 @@
 Please follow the below instructions to run this project in your computer:
 
 1. Clone this repository
-   ```sh
-   git clone https://github.com/learnwithsumit/think-in-a-react-way.git
-   ```
-2. Checkout to branch "lesson-3"
-   ```sh
-   git checkout lesson-3
-   ```
-3. Run
+
+2. Run
    ```sh
    yarn
    ```
-4. Your app should be available in http://localhost:5500
 
 <!-- Editor Setup -->
 
