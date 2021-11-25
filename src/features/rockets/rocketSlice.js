@@ -2,12 +2,12 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const fetchAsyncRockets = createAsyncThunk('rockets/fetchAsyncRockets', async () => {
-    const response = await axios.get('https://api.spacexdata.com/v3/launches');
-    return response.data;
+    const { data } = await axios.get('https://api.spacexdata.com/v3/launches');
+    return data;
 });
 
 const initialState = {
-    rockets: {},
+    rockets: [],
 };
 
 const rocketSlice = createSlice({
@@ -15,7 +15,7 @@ const rocketSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers: {
-        [fetchAsyncRockets]: () => {
+        [fetchAsyncRockets.pending]: () => {
             console.log('Pending');
         },
         [fetchAsyncRockets.fulfilled]: (state, { payload }) => {
